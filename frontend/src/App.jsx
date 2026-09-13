@@ -778,6 +778,21 @@ function Footer({ setPage }) {
           Specialist borehole drilling contractor, hydrogeological surveys &amp; solar water
           installations in Kenya.
         </p>
+        <div className="mt-3 flex items-center justify-center gap-4 text-gray-500">
+          <button
+            onClick={() => handleNavClick({ preventDefault: () => {} }, "privacy")}
+            className="hover:text-gray-300 transition-colors underline"
+          >
+            Privacy Policy
+          </button>
+          <span>·</span>
+          <button
+            onClick={() => handleNavClick({ preventDefault: () => {} }, "terms")}
+            className="hover:text-gray-300 transition-colors underline"
+          >
+            Terms of Service
+          </button>
+        </div>
       </div>
     </footer>
   );
@@ -1949,14 +1964,265 @@ function MobileStickyBar({ setPage }) {
   );
 }
 
+/* ---------------- PRIVACY POLICY PAGE ---------------- */
+function PrivacyPage({ setPage }) {
+  return (
+    <>
+      <PageHero
+        title="Privacy Policy"
+        subtitle="How Artesian Drilling Limited collects, uses, and protects your personal information."
+        breadcrumb="Privacy Policy"
+      />
+      <section className="max-w-4xl mx-auto px-6 py-16">
+        <div className="space-y-8 text-gray-700 leading-relaxed text-sm">
+          <p className="text-xs text-gray-400">Last updated: 14 September 2026</p>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>1. Who We Are</h2>
+            <p>
+              Artesian Drilling Limited ("we", "us", or "our") is a borehole drilling and water
+              engineering contractor headquartered at Opposite Mara Frontier Hotel, Narok, Kenya.
+              We operate this website at <strong>artesiandrilling.com</strong>. If you have
+              questions about this policy, contact us at{" "}
+              <a href="mailto:artesiandrillingltd@gmail.com" className="underline" style={{ color: NAVY }}>
+                artesiandrillingltd@gmail.com
+              </a>.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>2. Information We Collect</h2>
+            <p>We only collect information you voluntarily provide via our contact/quote form:</p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>Full name</li>
+              <li>Email address</li>
+              <li>Service type / county location</li>
+              <li>Project details or message</li>
+            </ul>
+            <p className="mt-3">
+              We do not collect payment information, government IDs, or sensitive personal data.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>3. How We Use Your Information</h2>
+            <p>We use your submitted information exclusively to:</p>
+            <ul className="list-disc pl-6 mt-2 space-y-1">
+              <li>Respond to your borehole drilling enquiry or quotation request</li>
+              <li>Provide site assessment and project planning information</li>
+              <li>Contact you regarding your submitted project</li>
+            </ul>
+            <p className="mt-3">
+              We do not sell, rent, or trade your personal information to any third party.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>4. Analytics</h2>
+            <p>
+              This website uses Google Analytics 4 (GA4) to understand how visitors interact with
+              our pages. GA4 collects anonymised data such as pages visited, session duration, and
+              device type. No personally identifiable information is sent to Google Analytics.
+              You may opt out by installing the{" "}
+              <a
+                href="https://tools.google.com/dlpage/gaoptout"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+                style={{ color: NAVY }}
+              >
+                Google Analytics Opt-out Browser Add-on
+              </a>.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>5. Cookies</h2>
+            <p>
+              Our website may use essential cookies required for basic functionality. Google Analytics
+              also sets cookies for measurement purposes. By continuing to use this website you
+              consent to their use.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>6. Data Retention</h2>
+            <p>
+              Enquiry form submissions are retained only as long as necessary to respond to your
+              request, and are then securely deleted. We do not maintain mailing lists without
+              your explicit consent.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>7. Your Rights</h2>
+            <p>
+              You have the right to request access to, correction of, or deletion of any personal
+              data we hold about you. To exercise these rights, email us at{" "}
+              <a href="mailto:artesiandrillingltd@gmail.com" className="underline" style={{ color: NAVY }}>
+                artesiandrillingltd@gmail.com
+              </a>.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>8. Changes to This Policy</h2>
+            <p>
+              We may update this Privacy Policy periodically. The "Last updated" date at the top
+              of this page will reflect any changes. Continued use of the website after changes
+              constitutes acceptance of the updated policy.
+            </p>
+          </div>
+
+          <div className="pt-6 border-t border-gray-200 flex flex-wrap gap-4">
+            <button
+              onClick={() => setPage("contact")}
+              className="px-6 py-3 text-xs font-bold uppercase rounded-sm shadow"
+              style={{ backgroundColor: GOLD, color: NAVY_DARK }}
+            >
+              Contact Us →
+            </button>
+            <button
+              onClick={() => setPage("home")}
+              className="px-6 py-3 text-xs font-bold uppercase rounded-sm border border-gray-300 text-gray-700 hover:bg-gray-50"
+            >
+              Back to Homepage
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+/* ---------------- TERMS OF SERVICE PAGE ---------------- */
+function TermsPage({ setPage }) {
+  return (
+    <>
+      <PageHero
+        title="Terms of Service"
+        subtitle="The terms and conditions governing your use of the Artesian Drilling Limited website and services."
+        breadcrumb="Terms of Service"
+      />
+      <section className="max-w-4xl mx-auto px-6 py-16">
+        <div className="space-y-8 text-gray-700 leading-relaxed text-sm">
+          <p className="text-xs text-gray-400">Last updated: 14 September 2026</p>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>1. Acceptance of Terms</h2>
+            <p>
+              By accessing and using this website (<strong>artesiandrilling.com</strong>), you
+              accept and agree to be bound by these Terms of Service. If you do not agree, please
+              do not use this website.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>2. Website Use</h2>
+            <p>
+              This website is provided for general informational purposes about Artesian Drilling
+              Limited's services. You may use it to request quotations, learn about our services,
+              and contact our team. You must not use this website for any unlawful purpose or in
+              any manner that could damage, disable, or impair it.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>3. Quotations and Service Agreements</h2>
+            <p>
+              Enquiries and quote requests submitted through this website are not binding contracts.
+              All project quotations are provided following a formal site assessment. A project
+              commences only upon execution of a written agreement between Artesian Drilling
+              Limited and the client.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>4. Intellectual Property</h2>
+            <p>
+              All content on this website, including text, images, logos, and layout, is the
+              property of Artesian Drilling Limited. You may not reproduce, distribute, or use any
+              content without prior written permission.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>5. Limitation of Liability</h2>
+            <p>
+              The information on this website is provided in good faith for general guidance only.
+              Artesian Drilling Limited shall not be liable for any loss or damage arising from
+              reliance on website content. All drilling and engineering work is governed by a
+              separate written contract.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>6. External Links</h2>
+            <p>
+              This website may contain links to external websites (e.g. WhatsApp, Google Maps).
+              We are not responsible for the content or privacy practices of those websites.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>7. Governing Law</h2>
+            <p>
+              These terms are governed by the laws of Kenya. Any disputes shall be subject to the
+              exclusive jurisdiction of the Kenyan courts.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>8. Changes to Terms</h2>
+            <p>
+              We reserve the right to update these terms at any time. The "Last updated" date at
+              the top of this page indicates the most recent revision.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-extrabold mb-3" style={{ color: NAVY }}>9. Contact</h2>
+            <p>
+              Questions about these terms? Email{" "}
+              <a href="mailto:artesiandrillingltd@gmail.com" className="underline" style={{ color: NAVY }}>
+                artesiandrillingltd@gmail.com
+              </a>{" "}
+              or call{" "}
+              <a href="tel:+254742879962" className="underline" style={{ color: NAVY }}>
+                +254 742 879 962
+              </a>.
+            </p>
+          </div>
+
+          <div className="pt-6 border-t border-gray-200 flex flex-wrap gap-4">
+            <button
+              onClick={() => setPage("privacy")}
+              className="px-6 py-3 text-xs font-bold uppercase rounded-sm border border-gray-300 text-gray-700 hover:bg-gray-50"
+            >
+              Privacy Policy
+            </button>
+            <button
+              onClick={() => setPage("home")}
+              className="px-6 py-3 text-xs font-bold uppercase rounded-sm shadow"
+              style={{ backgroundColor: GOLD, color: NAVY_DARK }}
+            >
+              Back to Homepage →
+            </button>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
 /* ---------------- App Shell & Router ---------------- */
 
 function getPathPage() {
   if (typeof window === "undefined") return "home";
   const path = window.location.pathname.replace(/^\/+|\/+$/g, "").toLowerCase();
-  if (["services", "about", "contact"].includes(path)) return path;
+  if (["services", "about", "contact", "privacy", "terms"].includes(path)) return path;
   const hash = window.location.hash.replace("#", "").toLowerCase();
-  if (["services", "about", "contact"].includes(hash)) return hash;
+  if (["services", "about", "contact", "privacy", "terms"].includes(hash)) return hash;
   return "home";
 }
 
@@ -1986,24 +2252,40 @@ export default function App() {
     };
   }, []);
 
-  // Synchronize document title, description, canonical URL, and og:url dynamically
+  // GA4 Analytics initialisation (fires once on mount)
+  useEffect(() => {
+    const GA4_ID = import.meta?.env?.VITE_GA4_ID || "G-2SWH1NQSG0";
+    if (!GA4_ID || document.querySelector(`script[data-ga4]`)) return;
+    const s1 = document.createElement("script");
+    s1.setAttribute("data-ga4", "1");
+    s1.async = true;
+    s1.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
+    document.head.appendChild(s1);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", GA4_ID, { page_path: window.location.pathname });
+  }, []);
+
+  // Synchronize all SEO meta tags dynamically per page
   useEffect(() => {
     const titles = {
       home: "Borehole Drilling Services in Kenya | Artesian Drilling Ltd",
-      services:
-        "Borehole Drilling & Hydrogeological Survey Services Kenya | Artesian Drilling Ltd",
+      services: "Borehole Drilling & Hydrogeological Survey Services Kenya | Artesian Drilling Ltd",
       about: "About Artesian Drilling Ltd | Top Water Drilling Contractors Kenya",
       contact: "Contact Artesian Drilling Kenya | Narok Head Office & Free Quote",
+      privacy: "Privacy Policy | Artesian Drilling Limited",
+      terms: "Terms of Service | Artesian Drilling Limited",
     };
 
     const descriptions = {
       home: "Artesian Drilling provides reliable borehole drilling, hydrogeological surveys, and solar pump installations across Kenya. Get a free quote today.",
-      services:
-        "Explore all 6 specialized borehole drilling services: hydrogeological survey, rotary drilling, solar pump installation, water tower construction, and WARMA permits.",
-      about:
-        "Artesian Drilling Limited is a licensed water drilling contractor with 10+ years experience and 512+ completed borehole projects across Kenya.",
-      contact:
-        "Contact Artesian Drilling Limited in Narok, Kenya for borehole drilling quotes, hydrogeological site assessments, and solar pump pricing.",
+      services: "Explore all 6 specialized borehole drilling services: hydrogeological survey, rotary drilling, solar pump installation, water tower construction, and WARMA permits.",
+      about: "Artesian Drilling Limited is a licensed water drilling contractor with 10+ years experience and 512+ completed borehole projects across Kenya.",
+      contact: "Contact Artesian Drilling Limited in Narok, Kenya for borehole drilling quotes, hydrogeological site assessments, and solar pump pricing.",
+      privacy: "Read the Privacy Policy for Artesian Drilling Limited, explaining how we collect, use, and protect your personal information.",
+      terms: "Read the Terms of Service for Artesian Drilling Limited governing the use of our website and services.",
     };
 
     const canonicals = {
@@ -2011,31 +2293,80 @@ export default function App() {
       services: "https://artesiandrilling.com/services",
       about: "https://artesiandrilling.com/about",
       contact: "https://artesiandrilling.com/contact",
+      privacy: "https://artesiandrilling.com/privacy",
+      terms: "https://artesiandrilling.com/terms",
     };
 
-    if (titles[page]) {
-      document.title = titles[page];
-    }
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc && descriptions[page]) {
-      metaDesc.setAttribute("content", descriptions[page]);
-    }
+    const breadcrumbs = {
+      home: null,
+      services: [{ name: "Home", url: "https://artesiandrilling.com/" }, { name: "Services", url: "https://artesiandrilling.com/services" }],
+      about: [{ name: "Home", url: "https://artesiandrilling.com/" }, { name: "About Us", url: "https://artesiandrilling.com/about" }],
+      contact: [{ name: "Home", url: "https://artesiandrilling.com/" }, { name: "Contact", url: "https://artesiandrilling.com/contact" }],
+      privacy: [{ name: "Home", url: "https://artesiandrilling.com/" }, { name: "Privacy Policy", url: "https://artesiandrilling.com/privacy" }],
+      terms: [{ name: "Home", url: "https://artesiandrilling.com/" }, { name: "Terms of Service", url: "https://artesiandrilling.com/terms" }],
+    };
 
-    // Update canonical link tag
+    // Title
+    if (titles[page]) document.title = titles[page];
+
+    // Meta description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && descriptions[page]) metaDesc.setAttribute("content", descriptions[page]);
+
+    // Canonical
     let canonicalEl = document.querySelector('link[rel="canonical"]');
     if (!canonicalEl) {
       canonicalEl = document.createElement("link");
       canonicalEl.setAttribute("rel", "canonical");
       document.head.appendChild(canonicalEl);
     }
-    if (canonicals[page]) {
-      canonicalEl.setAttribute("href", canonicals[page]);
+    if (canonicals[page]) canonicalEl.setAttribute("href", canonicals[page]);
+
+    // og:url
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl && canonicals[page]) ogUrl.setAttribute("content", canonicals[page]);
+
+    // og:title
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle && titles[page]) ogTitle.setAttribute("content", titles[page]);
+
+    // twitter:title
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle && titles[page]) twTitle.setAttribute("content", titles[page]);
+
+    // og:description
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc && descriptions[page]) ogDesc.setAttribute("content", descriptions[page]);
+
+    // twitter:description
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc && descriptions[page]) twDesc.setAttribute("content", descriptions[page]);
+
+    // BreadcrumbList JSON-LD — inject/update per page
+    const existingBreadcrumb = document.querySelector('script[data-breadcrumb]');
+    if (existingBreadcrumb) existingBreadcrumb.remove();
+    const crumbs = breadcrumbs[page];
+    if (crumbs) {
+      const bSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": crumbs.map((c, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": c.name,
+          "item": c.url,
+        })),
+      };
+      const sc = document.createElement("script");
+      sc.setAttribute("type", "application/ld+json");
+      sc.setAttribute("data-breadcrumb", "1");
+      sc.textContent = JSON.stringify(bSchema);
+      document.head.appendChild(sc);
     }
 
-    // Update og:url meta tag
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl && canonicals[page]) {
-      ogUrl.setAttribute("content", canonicals[page]);
+    // GA4 page_view event on SPA navigation
+    if (window.gtag && canonicals[page]) {
+      window.gtag("event", "page_view", { page_path: canonicals[page].replace("https://artesiandrilling.com", "") || "/" });
     }
   }, [page]);
 
@@ -2044,12 +2375,14 @@ export default function App() {
     services: <ServicesPage setPage={setPage} />,
     about: <AboutPage setPage={setPage} />,
     contact: <ContactPage setPage={setPage} />,
+    privacy: <PrivacyPage setPage={setPage} />,
+    terms: <TermsPage setPage={setPage} />,
   };
 
   return (
     <div
       className="min-h-screen bg-white text-gray-800 flex flex-col"
-      style={{ fontFamily: "'Helvetica Neue', Arial, sans-serif" }}
+      style={{ fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif" }}
     >
       <div style={{ backgroundColor: NAVY_DARK }}>
         <Header page={page} setPage={setPage} />
