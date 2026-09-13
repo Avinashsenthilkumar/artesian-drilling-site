@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Downloads all images used on the site into ./public/images
+# Downloads all images used on the site into ./frontend/public/images
 # Run this on your own machine (not in this sandbox — it can't reach
 # artesiandrilling.com directly).
 #
@@ -7,8 +7,8 @@
 #   ./download-images.sh
 
 set -e
-mkdir -p public/images
-cd public/images
+mkdir -p frontend/public/images
+cd frontend/public/images
 
 curl -L -o hero.jpeg \
   "https://artesiandrilling.com/wp-content/uploads/2026/02/WhatsApp-Image-2025-12-12-at-10.50.56-PM-1.jpeg"
@@ -43,4 +43,4 @@ curl -L -o contact-1.jpeg \
 curl -L -o contact-2.jpeg \
   "https://artesiandrilling.com/wp-content/uploads/2026/02/WhatsApp-Image-2025-12-12-at-10.49.46-PM-1024x768.jpeg"
 
-echo "Done. Images saved to public/images/"
+echo "Done. Images saved to frontend/public/images/"

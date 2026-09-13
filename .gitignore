@@ -1,5 +1,4 @@
 node_modules/
 dist/
 .env
-frontend/public/images/
 .DS_Store

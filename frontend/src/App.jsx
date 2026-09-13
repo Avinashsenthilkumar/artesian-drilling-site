@@ -14,7 +14,7 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 );
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUM}?text=${WHATSAPP_MESSAGE}`;
 
-const heroImg = "/images/hero.jpeg";
+const heroImg = "/images/hero.webp";
 
 /* ---------------- Services Data (6 Core Services) ---------------- */
 const servicesList = [
@@ -23,7 +23,7 @@ const servicesList = [
     title: "Hydrogeological Survey & Aquifer Mapping",
     subtitle: "Geophysical groundwater exploration with certified WARMA reports",
     desc: "We deploy advanced geophysical resistivity meters (vertical electrical sounding) to assess subsurface rock formations, identify saturated water-bearing aquifers, and calculate expected drilling depths and water yields. Our licensed hydrogeologists prepare the mandatory comprehensive survey report required for WARMA drilling authorization permits in Kenya.",
-    img: "/images/service-hydrogeological-survey.jpeg",
+    img: "/images/service-hydrogeological-survey.webp",
     alt: "Hydrogeological survey and geophysical groundwater exploration in Kenya",
     badge: "WARMA Permitted",
     specs: [
@@ -45,7 +45,7 @@ const servicesList = [
     title: "Rotary Borehole Drilling in Kenya",
     subtitle: "Turnkey deep well drilling using modern heavy-duty rotary rigs",
     desc: "Equipped with high-pressure rotary drill rigs and air percussion hammers, we drill water boreholes through all Kenyan geological formations—from soft clay and silt to hard basalt, volcanic phonolites, and granite. We maintain high standards of borehole alignment, certified well casing installation, and sanitary gravel packing to guarantee 30+ years of borehole life.",
-    img: "/images/service-site-assessment.jpeg",
+    img: "/images/service-site-assessment.webp",
     alt: "Rotary borehole drilling rig in Kenya - Artesian Drilling Ltd",
     badge: "Turnkey Drilling",
     specs: [
@@ -67,7 +67,7 @@ const servicesList = [
     title: "Solar & Submersible Water Pump Installation",
     subtitle: "High-efficiency EPRA-compliant solar and electric water pumping systems",
     desc: "Water is only useful when brought reliably to the surface. We engineer and install tailor-made pumping solutions including high-durability stainless steel submersible pumps, mono pumps, and solar photovoltaic pumping arrays. Solar systems eliminate high monthly power and fuel bills, delivering clean pumped water from morning till sunset.",
-    img: "/images/service-pump-installation.jpeg",
+    img: "/images/service-pump-installation.webp",
     alt: "Solar and submersible water pump installation in Kenya",
     badge: "Zero Power Bills",
     specs: [
@@ -89,7 +89,7 @@ const servicesList = [
     title: "Elevated Water Tower Construction",
     subtitle: "Durable steel and concrete elevated tanks for gravity-fed distribution",
     desc: "Proper water storage ensures consistent hydraulic pressure without relying on constant pump cycling. We design, fabricate, and erect elevated steel tank towers ranging from 6 to 18 meters in height, engineered to support steel, fiberglass, or multi-thousand-liter plastic storage tanks for residential estates, institutions, and farms.",
-    img: "/images/service-water-tower.jpeg",
+    img: "/images/service-water-tower.webp",
     alt: "Elevated steel water tower construction for storage and distribution in Kenya",
     badge: "Structural Engineering",
     specs: [
@@ -111,7 +111,7 @@ const servicesList = [
     title: "Community, Farm & Institutional Water Schemes",
     subtitle: "Large-scale water supply systems for villages, ranches, schools & factories",
     desc: "We manage complete water infrastructure projects from wellhead to water kiosks and irrigation lines. Working with NGOs, County Governments, agricultural cooperatives, and private estates, we build community water distribution points, livestock troughs, drip irrigation piping networks, and institutional water storage.",
-    img: "/images/service-community-water.jpeg",
+    img: "/images/service-community-water.webp",
     alt: "Community borehole drilling and public water supply project in Kenya",
     badge: "Large Scale Schemes",
     specs: [
@@ -133,7 +133,7 @@ const servicesList = [
     title: "Borehole Consultancy, Licensing & WARMA/NEMA Permits",
     subtitle: "Full regulatory approvals, environmental impact assessment & water testing",
     desc: "Navigating Kenyan groundwater regulations can be complex. Artesian Drilling provides complete advisory and liaison services to secure your Water Resources Authority (WARMA/WRA) drilling authorizations, NEMA Environmental Impact Assessment (EIA) licenses, and government accredited laboratory water chemical testing reports.",
-    img: "/images/service-consultancy.jpeg",
+    img: "/images/service-consultancy.webp",
     alt: "Borehole drilling consultancy, WARMA permits and NEMA licensing in Kenya",
     badge: "100% Legal Compliance",
     specs: [
@@ -319,11 +319,11 @@ const trustItems = [
 
 const contactImgs = [
   {
-    src: "/images/contact-1.jpeg",
+    src: "/images/contact-1.webp",
     alt: "Artesian Drilling crew mobilizing rotary drilling rig on site in Narok Kenya",
   },
   {
-    src: "/images/contact-2.jpeg",
+    src: "/images/contact-2.webp",
     alt: "Artesian Drilling drilling rig operating on agricultural borehole site in Kenya",
   },
 ];
@@ -1024,6 +1024,11 @@ function ServicesPage({ setPage }) {
                   src={s.img}
                   alt={s.alt}
                   loading="lazy"
+                  onError={(e) => {
+                    if (e.currentTarget.src.endsWith(".webp")) {
+                      e.currentTarget.src = e.currentTarget.src.replace(/\.webp$/, ".jpeg");
+                    }
+                  }}
                   className="w-full h-full object-cover"
                 />
                 <span
@@ -1383,6 +1388,11 @@ function HomePage({ setPage }) {
                   src={s.img}
                   alt={s.alt}
                   loading="lazy"
+                  onError={(e) => {
+                    if (e.currentTarget.src.endsWith(".webp")) {
+                      e.currentTarget.src = e.currentTarget.src.replace(/\.webp$/, ".jpeg");
+                    }
+                  }}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <span
@@ -1511,6 +1521,11 @@ function HomePage({ setPage }) {
                 src={w.img}
                 alt={w.alt}
                 loading="lazy"
+                onError={(e) => {
+                  if (e.currentTarget.src.endsWith(".webp")) {
+                    e.currentTarget.src = e.currentTarget.src.replace(/\.webp$/, ".jpeg");
+                  }
+                }}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -1653,6 +1668,11 @@ function ContactPage() {
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
+                onError={(e) => {
+                  if (e.currentTarget.src.endsWith(".webp")) {
+                    e.currentTarget.src = e.currentTarget.src.replace(/\.webp$/, ".jpeg");
+                  }
+                }}
                 className="w-full h-full object-cover"
               />
             </div>
