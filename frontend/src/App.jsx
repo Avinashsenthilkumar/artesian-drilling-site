@@ -784,7 +784,7 @@ function Footer({ setPage }) {
 }
 
 /* ---------------- Form Component ---------------- */
-const API_BASE = import.meta?.env?.VITE_API_BASE || "http://localhost:4000";
+const API_BASE = import.meta?.env?.VITE_API_BASE ?? "";
 
 function QuoteAndFaq({ faqs, defaultService = "" }) {
   const [form, setForm] = useState({
@@ -1585,7 +1585,75 @@ function AboutPage({ setPage }) {
             clean water access across Kenya through superior geological science, modern drilling
             technology, and transparent customer service.
           </p>
+
+          <h3 className="text-xl sm:text-2xl font-extrabold pt-4" style={{ color: NAVY }}>
+            Our Equipment & Technical Capabilities
+          </h3>
+          <p>
+            Artesian Drilling operates a modern fleet of heavy-duty rotary drill rigs capable of
+            penetrating all Kenyan geological formations — from soft alluvial soils to hard volcanic
+            basalt and granite. Our rigs are equipped with air percussion hammers and tri-cone
+            roller bits rated for depths exceeding 350 metres. Each borehole is drilled and cased
+            to Kenya Bureau of Standards (KEBS) and Water Resources Authority (WRA) specifications,
+            using Class 9 and Class 10 uPVC or heavy mild steel casings to ensure borehole
+            longevity exceeding 30 years.
+          </p>
+          <p>
+            Our geophysical survey team uses advanced resistivity meters and vertical electrical
+            sounding (VES) equipment to locate underground aquifers with precision before a single
+            metre of ground is drilled. This scientific approach eliminates guesswork, reduces
+            client risk, and ensures that every borehole is drilled at the optimal location for
+            maximum water yield.
+          </p>
+
+          <h3 className="text-xl sm:text-2xl font-extrabold pt-4" style={{ color: NAVY }}>
+            Regulatory Compliance & Licensing
+          </h3>
+          <p>
+            All borehole drilling in Kenya requires specific permits from the Water Resources
+            Authority (WARMA/WRA) and an Environmental Impact Assessment (EIA) clearance from the
+            National Environment Management Authority (NEMA). Artesian Drilling is fully
+            authorized to operate under these regulations and guides our clients through the entire
+            permitting process — from hydrogeological survey report preparation to submission and
+            approval of WARMA drilling authorizations.
+          </p>
+          <p>
+            We also conduct government-accredited water quality laboratory testing to verify
+            potability, mineral composition, and compliance with WHO and Kenya drinking water
+            standards before handing over completed boreholes.{" "}
+            <button
+              onClick={() => setPage("services")}
+              className="underline font-semibold"
+              style={{ color: NAVY }}
+            >
+              View our full range of drilling and water engineering services →
+            </button>
+          </p>
+
+          <h3 className="text-xl sm:text-2xl font-extrabold pt-4" style={{ color: NAVY }}>
+            Serving All 47 Counties Across Kenya
+          </h3>
+          <p>
+            From our Narok headquarters, we mobilize drilling rigs rapidly across the Rift Valley,
+            Nairobi Metropolitan Area, Kajiado, Nakuru, Bomet, Kiambu, Machakos, and beyond. Our
+            extensive field experience includes projects for smallholder farms, large-scale
+            agricultural estates, schools, hospitals, community water projects funded by NGOs, and
+            County Government infrastructure programs. Whether you need a single residential
+            borehole or a large-scale community water supply scheme, Artesian Drilling has the
+            equipment, experience, and expertise to deliver.
+          </p>
+          <p>
+            Ready to get started?{" "}
+            <button
+              onClick={() => setPage("contact")}
+              className="underline font-semibold"
+              style={{ color: NAVY }}
+            >
+              Contact our drilling engineers for a free site assessment and quotation.
+            </button>
+          </p>
         </div>
+
 
         {/* Features */}
         <div className="grid sm:grid-cols-3 gap-8 mb-16">
@@ -1644,7 +1712,7 @@ function AboutPage({ setPage }) {
 }
 
 /* ---------------- CONTACT PAGE ---------------- */
-function ContactPage() {
+function ContactPage({ setPage }) {
   const mapSrc =
     "https://maps.google.com/maps?q=Opp.%20Mara%20frontier%20hotel%20Narok.&t=m&z=13&output=embed&iwloc=near";
 
@@ -1778,6 +1846,35 @@ function ContactPage() {
         </div>
 
         {/* Embedded Quote Form on Contact Page */}
+        {/* Outgoing links — prevent dead-end page for crawlers */}
+        <div className="mb-12 p-8 bg-gray-50 border border-gray-200 rounded-sm">
+          <Eyebrow color={GOLD}>Explore Our Services</Eyebrow>
+          <h2 className="text-xl sm:text-2xl font-extrabold mb-4" style={{ color: NAVY }}>
+            Our Full Range of Borehole Drilling &amp; Water Engineering Services
+          </h2>
+          <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+            Artesian Drilling provides end-to-end groundwater solutions across Kenya. From
+            hydrogeological surveys and WARMA permit acquisition to deep rotary borehole drilling,
+            solar pump installations, and elevated water tower construction — we handle every
+            stage of your water supply project.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <button
+              onClick={() => setPage("services")}
+              className="px-6 py-3 text-xs font-bold uppercase tracking-wider rounded-sm shadow"
+              style={{ backgroundColor: GOLD, color: NAVY_DARK }}
+            >
+              View All 6 Drilling Services →
+            </button>
+            <button
+              onClick={() => setPage("about")}
+              className="px-6 py-3 text-xs font-bold uppercase tracking-wider rounded-sm border-2 text-gray-700 hover:bg-gray-100"
+              style={{ borderColor: NAVY }}
+            >
+              About Artesian Drilling
+            </button>
+          </div>
+        </div>
         <QuoteAndFaq faqs={homeFaqs} />
       </section>
     </>
@@ -1889,7 +1986,7 @@ export default function App() {
     };
   }, []);
 
-  // Synchronize document title and description dynamically
+  // Synchronize document title, description, canonical URL, and og:url dynamically
   useEffect(() => {
     const titles = {
       home: "Borehole Drilling Services in Kenya | Artesian Drilling Ltd",
@@ -1909,12 +2006,36 @@ export default function App() {
         "Contact Artesian Drilling Limited in Narok, Kenya for borehole drilling quotes, hydrogeological site assessments, and solar pump pricing.",
     };
 
+    const canonicals = {
+      home: "https://artesiandrilling.com/",
+      services: "https://artesiandrilling.com/services",
+      about: "https://artesiandrilling.com/about",
+      contact: "https://artesiandrilling.com/contact",
+    };
+
     if (titles[page]) {
       document.title = titles[page];
     }
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc && descriptions[page]) {
       metaDesc.setAttribute("content", descriptions[page]);
+    }
+
+    // Update canonical link tag
+    let canonicalEl = document.querySelector('link[rel="canonical"]');
+    if (!canonicalEl) {
+      canonicalEl = document.createElement("link");
+      canonicalEl.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalEl);
+    }
+    if (canonicals[page]) {
+      canonicalEl.setAttribute("href", canonicals[page]);
+    }
+
+    // Update og:url meta tag
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl && canonicals[page]) {
+      ogUrl.setAttribute("content", canonicals[page]);
     }
   }, [page]);
 

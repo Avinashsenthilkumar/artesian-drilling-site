@@ -1,0 +1,8 @@
+/* Netlify SPA Redirect — fixes 404 on /services, /about, /contact direct visits */
+/*
+  /    /index.html   200
+*/
+/services   /index.html   200
+/about      /index.html   200
+/contact    /index.html   200
+/*          /index.html   200
