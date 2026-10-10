@@ -779,19 +779,21 @@ function Footer({ setPage }) {
           installations in Kenya.
         </p>
         <div className="mt-3 flex items-center justify-center gap-4 text-gray-500">
-          <button
-            onClick={() => handleNavClick({ preventDefault: () => {} }, "privacy")}
+          <a
+            href="/privacy"
+            onClick={(e) => handleNavClick(e, "privacy")}
             className="hover:text-gray-300 transition-colors underline"
           >
             Privacy Policy
-          </button>
+          </a>
           <span>·</span>
-          <button
-            onClick={() => handleNavClick({ preventDefault: () => {} }, "terms")}
+          <a
+            href="/terms"
+            onClick={(e) => handleNavClick(e, "terms")}
             className="hover:text-gray-300 transition-colors underline"
           >
             Terms of Service
-          </button>
+          </a>
         </div>
       </div>
     </footer>
