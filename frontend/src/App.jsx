@@ -2289,21 +2289,21 @@ export default function App() {
     };
 
     const canonicals = {
-      home: "https://artesiandrilling.com/",
-      services: "https://artesiandrilling.com/services",
-      about: "https://artesiandrilling.com/about",
-      contact: "https://artesiandrilling.com/contact",
-      privacy: "https://artesiandrilling.com/privacy",
-      terms: "https://artesiandrilling.com/terms",
+      home: "https://www.artesiandrilling.com/",
+      services: "https://www.artesiandrilling.com/services",
+      about: "https://www.artesiandrilling.com/about",
+      contact: "https://www.artesiandrilling.com/contact",
+      privacy: "https://www.artesiandrilling.com/privacy",
+      terms: "https://www.artesiandrilling.com/terms",
     };
 
     const breadcrumbs = {
       home: null,
-      services: [{ name: "Home", url: "https://artesiandrilling.com/" }, { name: "Services", url: "https://artesiandrilling.com/services" }],
-      about: [{ name: "Home", url: "https://artesiandrilling.com/" }, { name: "About Us", url: "https://artesiandrilling.com/about" }],
-      contact: [{ name: "Home", url: "https://artesiandrilling.com/" }, { name: "Contact", url: "https://artesiandrilling.com/contact" }],
-      privacy: [{ name: "Home", url: "https://artesiandrilling.com/" }, { name: "Privacy Policy", url: "https://artesiandrilling.com/privacy" }],
-      terms: [{ name: "Home", url: "https://artesiandrilling.com/" }, { name: "Terms of Service", url: "https://artesiandrilling.com/terms" }],
+      services: [{ name: "Home", url: "https://www.artesiandrilling.com/" }, { name: "Services", url: "https://www.artesiandrilling.com/services" }],
+      about: [{ name: "Home", url: "https://www.artesiandrilling.com/" }, { name: "About Us", url: "https://www.artesiandrilling.com/about" }],
+      contact: [{ name: "Home", url: "https://www.artesiandrilling.com/" }, { name: "Contact", url: "https://www.artesiandrilling.com/contact" }],
+      privacy: [{ name: "Home", url: "https://www.artesiandrilling.com/" }, { name: "Privacy Policy", url: "https://www.artesiandrilling.com/privacy" }],
+      terms: [{ name: "Home", url: "https://www.artesiandrilling.com/" }, { name: "Terms of Service", url: "https://www.artesiandrilling.com/terms" }],
     };
 
     // Title
@@ -2366,7 +2366,7 @@ export default function App() {
 
     // GA4 page_view event on SPA navigation
     if (window.gtag && canonicals[page]) {
-      window.gtag("event", "page_view", { page_path: canonicals[page].replace("https://artesiandrilling.com", "") || "/" });
+      window.gtag("event", "page_view", { page_path: canonicals[page].replace("https://www.artesiandrilling.com", "") || "/" });
     }
   }, [page]);
 

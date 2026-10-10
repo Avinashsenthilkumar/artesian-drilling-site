@@ -1,9 +1,9 @@
 # Robots.txt for Artesian Drilling Limited
-# Website: https://artesiandrilling.com
+# Website: https://www.artesiandrilling.com
 
 User-agent: *
 Allow: /
 Disallow: /api/
 
 # Sitemaps
-Sitemap: https://artesiandrilling.com/sitemap.xml
+Sitemap: https://www.artesiandrilling.com/sitemap.xml
